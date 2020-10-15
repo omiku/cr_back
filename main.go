@@ -36,9 +36,9 @@ func init() {
 	Info = log.New(io.MultiWriter(os.Stderr, infoFile), "Info:", log.Ldate|log.Ltime|log.Lshortfile)
 	Error = log.New(io.MultiWriter(os.Stderr, errFile), "Error:", log.Ldate|log.Ltime|log.Lshortfile)
 
-	_, err = os.Stat("/data/backup")
+	_, err = os.Stat(pwd)
 	if err != nil {
-		err := os.MkdirAll("/data/backup", 0600)
+		err := os.MkdirAll(pwd, 0600)
 		if err != nil {
 			Error.Println(err)
 			os.Exit(1)
