@@ -56,8 +56,8 @@ func Backup(str string) (fList []string) {
 	DBFName := "backup_DB_" + str + ".sql"
 	FName := "backup_FILE_" + str + ".tar.gz"
 	fList = append(fList,DBFName,FName)
-  c1 := "tar -cjf /data/backup/"+FName+" /data/cloudreve  --exclude=cloudreve/aria2-config --exclude=cloudreve/downloads --exclude=cloudreve/mysql"
-  //tar -czf /data/backup/"+FName+" /data/cloudreve  --exclude=cloudreve/aria2-config --exclude=cloudreve/downloads --exclude=cloudreve/mysql
+  	c1 := "tar -cjf /data/backup/"+FName+" /data/cloudreve  --exclude=cloudreve/aria2-config --exclude=cloudreve/downloads --exclude=cloudreve/mysql"
+	//tar -czf /data/backup/"+FName+" /data/cloudreve  --exclude=cloudreve/aria2-config --exclude=cloudreve/downloads --exclude=cloudreve/mysql
 	c2 := "docker exec " + dockerName + " sh -c 'exec mysqldump --databases pan -uroot -p\"" + passwd + "\"' > /data/backup/" + DBFName
 	cmd := exec.Command("sh", "-c", c1)
 	err := cmd.Start()
