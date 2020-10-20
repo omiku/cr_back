@@ -20,8 +20,8 @@ var (
 	dockerName = "your name"
 	passwd = "your passwd"
 	accessKey = "your qiniu accessKey"
-	secretKey = "your qiniu accessKey"
-	bucket = "your qiniu accessKey"
+	secretKey = "your qiniu secretKey"
+	bucket = "your qiniu bucket"
 	wg   sync.WaitGroup
 )
 
